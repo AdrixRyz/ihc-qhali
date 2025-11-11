@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlay = document.createElement('div');
     overlay.id = 'goAppNotice';
     overlay.innerHTML = `
-      <div class="goapp_modal" role="dialog" aria-modal="true" aria-labelledby="goAppTitle">
+      <div class="goapp_modal">
         <h4 id="goAppTitle">Redirección</h4>
         <p>Este botón redirigirá a la aplicación. Cargando...</p>
-        <div class="loading_spinner" aria-label="Cargando" role="status"></div>
+        <div class="loading_spinner"></div>
         <button type="button" class="close_modal">Cerrar</button>
       </div>`;
     document.body.appendChild(overlay);
