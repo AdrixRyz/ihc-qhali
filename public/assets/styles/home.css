@@ -18,6 +18,10 @@ header .logo {
     margin-left: 10px;
 }
 
+header .logo:hover {
+    filter: drop-shadow(0 4px 12px rgba(0, 75, 135, 0.25));
+}
+
 header nav {
     margin-left: auto;
     margin-right: 20px;
@@ -37,9 +41,23 @@ header nav {
     justify-content: center;
 }
 
-#go_app {
+.header_link.active {
+    background-color: #002C4F;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.header_link:hover {
+    text-decoration: underline;
+    background-color: #75BFBE;
+    color: #fff;
+}
+
+.go_app {
     cursor: pointer;
     border-radius: 25px;
+    font-weight: 600;
     width: 120px;
     height: 40px;
     background-color: #004B87;
@@ -47,18 +65,6 @@ header nav {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.header_link:hover {
-    text-decoration: underline;
-    background-color: #75BFBE;
-    color: white;
-}
-
-.header_link.active {
-    background-color: #002C4F;
-    color: #fff;
-    font-weight: 600;
     text-decoration: none;
 }
 
@@ -113,6 +119,21 @@ header nav {
     cursor: pointer;
 }
 
+.hero_top #text button, .go_app {
+    transition: transform .2s ease, box-shadow .2s ease;
+    will-change: transform;
+}
+
+.hero_top #text button:hover, .go_app:hover {    
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 10px 24px rgba(0, 75, 135, 0.35);
+}
+
+.hero_top #text button:active, .go_app:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 6px 14px rgba(0, 75, 135, 0.25);
+}
+
 .hero_middle {
     background-color: #f4f4f4;
     height: 600px;
@@ -140,6 +161,12 @@ header nav {
     padding: 0 25px;
     background-color: #004B87;
     border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.features_grid div:hover {
+    transform: translateY(-8px);
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.2));
 }
 
 .features_grid img {
@@ -170,6 +197,18 @@ header nav {
     border-radius: 25px;
     cursor: pointer;
     font-weight: 700;
+    transition: transform .2s ease, box-shadow .2s ease;
+    will-change: transform;
+}
+
+.features_grid button:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 10px 22px rgba(151, 151, 151, 0.35);
+}
+
+.features_grid button:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 6px 12px rgba(151, 151, 151, 0.25);
 }
 
 .hero_bottom {
@@ -210,4 +249,67 @@ footer {
     text-align: center;
     padding: 20px;
     font-size: 0.9rem;
+}
+
+
+/* Modal aviso go_app */
+#goAppNotice {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.goapp_modal {
+  background: #ffffff;
+  padding: 24px 28px;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 340px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.25);
+  text-align: center;
+  font-family: Poppins, sans-serif;
+}
+
+.goapp_modal h4 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #004B87;
+}
+
+.goapp_modal p {
+  font-size: .9rem;
+  margin: 0 0 14px;
+  color: #222;
+}
+
+.loading_spinner {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 16px;
+  border: 5px solid #e3edf6;
+  border-top-color: #004B87;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.goapp_modal .close_modal {
+  padding: 8px 18px;
+  border: none;
+  background: #004B87;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.goapp_modal .close_modal:hover {
+  background: #003F72;
 }
